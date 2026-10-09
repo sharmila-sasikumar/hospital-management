@@ -1,1 +1,78 @@
-# hospital-management
+# 🏥 Hospital Management System
+
+A web application to manage patients, doctors and appointments. The backend is built with **Spring Boot** and the data is stored in a **SQLite** database. The frontend uses **HTML, CSS and JavaScript**.
+
+## Features
+
+- Add, view and delete **patients**
+- Add, view and delete **doctors**
+- Book and cancel **appointments** (patient + doctor + date + reason)
+- REST API for all modules
+- Data saved in a local SQLite file (`hospital.db`)
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | HTML, CSS, JavaScript |
+| Backend | Java 17, Spring Boot 3 |
+| Database | SQLite (Spring Data JPA + Hibernate) |
+| Build tool | Maven |
+
+## Project Structure
+
+```
+demo/
+├── pom.xml
+└── src/main/
+    ├── java/com/example/demo/
+    │   ├── DemoApplication.java
+    │   ├── model/          (Patient, Doctor, Appointment)
+    │   ├── repository/     (JPA repositories)
+    │   └── controller/     (REST controllers)
+    └── resources/
+        ├── application.properties
+        └── static/         (index.html, style.css, app.js)
+```
+
+## Requirements
+
+- Java JDK 17 or higher
+- Git
+- VS Code (or any Java IDE)
+
+Maven does not need to be installed separately because the project includes the Maven wrapper (`mvnw`).
+
+## How to Run
+
+1. Clone the repository:
+```bash
+   git clone https://github.com/sharmila-sasikumar/hospital-management.git
+   cd hospital-management
+```
+
+2. Start the application:
+   - Windows: `.\mvnw.cmd spring-boot:run`
+   - Mac/Linux: `./mvnw spring-boot:run`
+
+3. Wait for the message `Started DemoApplication`.
+
+4. Open your browser at **http://localhost:8080**
+
+## API Endpoints
+
+| Method | URL | Description |
+|---|---|---|
+| GET | `/api/patients` | List all patients |
+| POST | `/api/patients` | Add a patient |
+| PUT | `/api/patients/{id}` | Update a patient |
+| DELETE | `/api/patients/{id}` | Delete a patient |
+| GET | `/api/doctors` | List all doctors |
+| POST | `/api/doctors` | Add a doctor |
+| PUT | `/api/doctors/{id}` | Update a doctor |
+| DELETE | `/api/doctors/{id}` | Delete a doctor |
+| GET | `/api/appointments` | List all appointments |
+| POST | `/api/appointments` | Book an appointment |
+| DELETE | `/api/appointments/{id}` | Cancel an appointment |
+
+###
