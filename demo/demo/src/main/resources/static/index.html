@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hospital Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><h1>🏥 Hospital Management System</h1></header>
+
+  <nav>
+    <button class="tab active" data-target="patients">Patients</button>
+    <button class="tab" data-target="doctors">Doctors</button>
+    <button class="tab" data-target="appointments">Appointments</button>
+  </nav>
+
+  <main>
+    <section id="patients" class="panel active">
+      <h2>Add Patient</h2>
+      <div class="form">
+        <input id="p-name" placeholder="Name">
+        <input id="p-age" type="number" placeholder="Age">
+        <select id="p-gender">
+          <option>Male</option><option>Female</option><option>Other</option>
+        </select>
+        <input id="p-phone" placeholder="Phone">
+        <input id="p-disease" placeholder="Disease">
+        <button onclick="addPatient()">Add</button>
+      </div>
+      <table>
+        <thead><tr><th>ID</th><th>Name</th><th>Age</th><th>Gender</th><th>Phone</th><th>Disease</th><th>Action</th></tr></thead>
+        <tbody id="patient-table"></tbody>
+      </table>
+    </section>
+
+    <section id="doctors" class="panel">
+      <h2>Add Doctor</h2>
+      <div class="form">
+        <input id="d-name" placeholder="Name">
+        <input id="d-spec" placeholder="Specialization">
+        <input id="d-phone" placeholder="Phone">
+        <button onclick="addDoctor()">Add</button>
+      </div>
+      <table>
+        <thead><tr><th>ID</th><th>Name</th><th>Specialization</th><th>Phone</th><th>Action</th></tr></thead>
+        <tbody id="doctor-table"></tbody>
+      </table>
+    </section>
+
+    <section id="appointments" class="panel">
+      <h2>Book Appointment</h2>
+      <div class="form">
+        <select id="a-patient"></select>
+        <select id="a-doctor"></select>
+        <input id="a-date" type="date">
+        <input id="a-reason" placeholder="Reason">
+        <button onclick="addAppointment()">Book</button>
+      </div>
+      <table>
+        <thead><tr><th>ID</th><th>Patient</th><th>Doctor</th><th>Date</th><th>Reason</th><th>Action</th></tr></thead>
+        <tbody id="appointment-table"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
